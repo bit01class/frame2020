@@ -14,7 +14,7 @@ public class Ex01Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String cmsg=req.getServletContext().getInitParameter("cmsg");
-		String msg1=this.getInitParameter("msg1");
+		String msg1=getInitParameter("msg1");
 		System.out.println("ex01Controller ... servlet param:"+msg1);
 		System.out.println("ex01Controller ... context param:"+cmsg);
 	}

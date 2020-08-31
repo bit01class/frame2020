@@ -26,7 +26,10 @@ public class Ex02 implements Filter {
 		
 		System.out.println("Filter doFilter..."+encoding);
 		req.setCharacterEncoding(encoding);
+		System.out.println("before filter ex02... ");
 		chain.doFilter(req, res);
+		System.out.println("after filter ex02... ");
+		return;
 	}
 
 	@Override
@@ -36,3 +39,10 @@ public class Ex02 implements Filter {
 	}
 
 }
+
+
+
+
+
+
+

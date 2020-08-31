@@ -21,7 +21,9 @@ public class Ex03 implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain) throws IOException, ServletException {
 		System.out.println("Ex03 doFilter...");
+		System.out.println("before filter ex03... ");
 		chain.doFilter(req, res);
+		System.out.println("after filter ex03... ");
 	}
 
 	@Override
