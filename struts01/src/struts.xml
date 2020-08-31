@@ -5,9 +5,32 @@
 
     
     <struts>
-    	<package name="default" extends="struts-default">
+    	<package name="default" namespace="/" extends="struts-default">
     		<action name="hello" class="com.bit.action.Ex01Action">
     			<result>/hello.jsp</result>
     		</action>
+    		<action name="ex02" class="com.bit.action.Ex02Action">
+    			<result name="error">/ex03.jsp</result>
+    			<result name="success">/ex02.jsp</result>
+    		</action>
+    	</package>
+    	<package name="pack2" namespace="/etc" extends="default">
+    		<action name="ex04" class="com.bit.action.Ex04Action">
+    			<result>/ex04.jsp</result>
+    		</action>
+    	</package>
+    	<package name="lec03" namespace="/lec04" extends="pack2">
+    		<action name="ex01" class="com.bit.action.Ex11Action">
+    			<interceptor-ref name="params"></interceptor-ref>
+    			<result>/ex05.jsp</result>
+    		</action>
     	</package>
     </struts>
+    
+    
+    
+    
+    
+    
+    
+    
