@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>result page</h2>
-	<div>sabun:${sabun }</div>
-	<div>name:${name }</div>
+	<div>sabun:${bean.sabun }</div>
+	<div>name:${bean.name }</div>
 </body>
 </html>

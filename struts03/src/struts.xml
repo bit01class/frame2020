@@ -31,6 +31,21 @@ struts.i18n.encoding=UTF-8 : 인코딩 설정을 바꿉니다. 한글이 깨지�
     			<interceptor-ref name="params"/>
     			<result name="success">/result.jsp</result>
     		</action>
+    		<action name="result2" class="com.bit.action.Step02Action">
+    			<interceptor-ref name="params"/>
+    			<result name="success">/result.jsp</result>
+    		</action>
+    		<action name="result3" class="com.bit.action.Step03Action">
+    			<interceptor-ref name="modelDriven"/>
+    			<interceptor-ref name="params"/>
+    			<result name="success">/result.jsp</result>
+    		</action>
+    		<action name="result4" class="com.bit.action.Step04Action">
+    			<interceptor-ref name="prepare"/>
+    			<interceptor-ref name="modelDriven"/>
+    			<interceptor-ref name="params"/>
+    			<result name="success">/result.jsp</result>
+    		</action>
     	</package>
     </struts>
     
