@@ -22,9 +22,9 @@
 			for(DeptVo bean:list){
 		%>
 		<tr>
-			<td><%=bean.getDeptno() %></td>
-			<td><%=bean.getDname() %></td>
-			<td><%=bean.getLoc() %></td>
+			<td><a href="detail.action?deptno=<%=bean.getDeptno() %>"><%=bean.getDeptno() %></a></td>
+			<td><a href="detail.action?deptno=<%=bean.getDeptno() %>"><%=bean.getDname() %></a></td>
+			<td><a href="detail.action?deptno=<%=bean.getDeptno() %>"><%=bean.getLoc() %></a></td>
 		</tr>
 		<%} %>
 	</table>

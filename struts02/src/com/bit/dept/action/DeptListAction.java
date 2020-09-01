@@ -18,6 +18,7 @@ public class DeptListAction implements Action {
 		DeptDao dao=null;
 		dao=new DeptDao();
 		alist=dao.selectAll();
+		
 		return Action.SUCCESS;
 	}
 

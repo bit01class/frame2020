@@ -3,8 +3,17 @@ package com.bit.dept.action;
 import com.bit.dept.model.DeptDao;
 import com.opensymphony.xwork2.Action;
 
-public class DeptInsertAction implements Action {
-	private String dname,loc;
+public class DeptEditAction implements Action {
+	int deptno;
+	String dname,loc;
+
+	public int getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
 
 	public void setDname(String dname) {
 		this.dname = dname;
@@ -16,13 +25,8 @@ public class DeptInsertAction implements Action {
 
 	@Override
 	public String execute() throws Exception {
-		if(dname.isEmpty()||loc.isEmpty()){
-			return Action.INPUT;
-		}
-		
 		DeptDao dao=new DeptDao();
-		dao.insertOne(dname,loc);
-		
+		dao.updateOne(deptno,dname,loc);
 		return Action.SUCCESS;
 	}
 
