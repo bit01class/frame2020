@@ -25,7 +25,7 @@ public class DeptDao {
 	}
 	
 	public ArrayList<DeptVo> selectAll(){
-		ArrayList<DeptVo> list=new ArrayList<DeptVo>();
+		ArrayList<DeptVo> list=new ArrayList<>();
 		String sql="select * from dept";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -44,6 +44,24 @@ public class DeptDao {
 			}
 		}
 		return list;
+	}
+
+	public void insertOne(String dname, String loc) {
+		String sql="insert into dept (dname,loc) values (?,?)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dname);
+			pstmt.setString(2, loc);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally{
+			try {
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
 
