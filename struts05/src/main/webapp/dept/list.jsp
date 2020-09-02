@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <head>
@@ -39,6 +40,20 @@
 		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 		</div>
 	  </div>
+		<table class="table">
+			<tr>
+				<th>DEPTNO</th>
+				<th>DNAME</th>
+				<th>LOC</th>
+			</tr>
+			<c:forEach items="${list }" var="bean">
+			<tr>
+				<td>${bean.deptno }</td>
+				<td>${bean.dname }</td>
+				<td>${bean.loc }</td>
+			</tr>
+			</c:forEach>
+		</table>
 	</div>
 	<div class="row" id="footer">
 	  <div class="col-md-12"><address>비트캠프 서울시 서초구 강남대로 459 (서초동, 백암빌딩)</address>
