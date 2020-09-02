@@ -10,6 +10,18 @@
     		<action name="index">
     			<result>/index.jsp</result>
     		</action>
+    		<action name="input" class="com.bit.emp.action.InputAction">
+    			<result>/input.jsp</result>
+    		</action>
+    		<action name="result" class="com.bit.emp.action.ResultAction">
+    			<interceptor-ref name="prepare"/>
+    			<interceptor-ref name="modelDriven"/>
+    			<interceptor-ref name="params"/>
+    			<interceptor-ref name="validation"/>
+    			<interceptor-ref name="workflow"/>
+    			<result name="input">/input.jsp</result>
+    			<result name="success">/result.jsp</result>
+    		</action>
     	</package>
     	
     </struts>
