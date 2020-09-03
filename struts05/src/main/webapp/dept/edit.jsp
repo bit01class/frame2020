@@ -13,12 +13,6 @@
     	#menu>div,#footer{
     		background-color: darkgray;
     	}
-    	tr>td:first-child{
-    		width: 100px;
-    	}
-    	td>a{
-    		display: block;
-    	}
     </style>
     <!-- loading jquery -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -41,24 +35,24 @@
 	<div class="row" id="content">
 	  <div class="col-md-12">
 	  	<div class="jumbotron">
-		  <h1>DEPT LIST PAGE!</h1>
-		  <p><a class="btn btn-primary btn-lg" href="dadd.action" role="button">입력</a></p>
+		  <h1>DEPT EDIT PAGE!</h1>
 		</div>
 	  </div>
-		<table class="table">
-			<tr>
-				<th>DEPTNO</th>
-				<th>DNAME</th>
-				<th>LOC</th>
-			</tr>
-			<c:forEach items="${list }" var="bean">
-			<tr>
-				<td><a href="ddetail.action?deptno=${bean.deptno }">${bean.deptno }</a></td>
-				<td><a href="ddetail.action?deptno=${bean.deptno }">${bean.dname }</a></td>
-				<td><a href="ddetail.action?deptno=${bean.deptno }">${bean.loc }</a></td>
-			</tr>
-			</c:forEach>
-		</table>
+		<form action="update.action" method="post">
+		  <div class="form-group">
+		    <label for="deptno">DEPTNO</label>
+		    <input type="text" class="form-control" name="deptno" id="deptno" value="${bean.deptno }" readonly="readonly"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="dname">DNAME</label>
+		    <input type="text" class="form-control" name="dname" id="dname" value="${bean.dname }"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="loc">LOC</label>
+		    <input type="text" class="form-control" name="loc" id="loc" value="${bean.loc }"/>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
 	<div class="row" id="footer">
 	  <div class="col-md-12"><address>비트캠프 서울시 서초구 강남대로 459 (서초동, 백암빌딩)</address>

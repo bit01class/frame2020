@@ -55,6 +55,22 @@ public class DeptDao {
 		}
 	}
 
+	public DeptVo selectOne(int deptno) throws SQLException {
+		String sql="select * from dept where deptno=?";
+		try {
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, deptno);
+			ResultSet rs=pstmt.executeQuery();
+			if(rs.next())
+				return new DeptVo(
+						rs.getInt(1),rs.getString(2),rs.getString(3)
+						);
+		}finally {
+			if(conn!=null)conn.close();
+		}
+		return null;
+	}
+
 }
 
 
