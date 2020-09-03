@@ -71,6 +71,19 @@ public class DeptDao {
 		return null;
 	}
 
+	public void updateOne(DeptVo bean) throws SQLException {
+		String sql="update dept set dname=?,loc=? where deptno=?";
+		try {
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getDname());
+			pstmt.setString(2, bean.getLoc());
+			pstmt.setInt(3, bean.getDeptno());
+			pstmt.executeUpdate();
+		}finally {
+			if(conn!=null)conn.close();
+		}
+	}
+
 }
 
 
