@@ -35,24 +35,20 @@
 	<div class="row" id="content">
 	  <div class="col-md-12">
 	  	<div class="jumbotron">
-		  <h1>DEPT LIST PAGE!</h1>
-		  <p><a class="btn btn-primary btn-lg" href="dadd.action" role="button">입력</a></p>
+		  <h1>DEPT ADD PAGE!</h1>
 		</div>
 	  </div>
-		<table class="table">
-			<tr>
-				<th>DEPTNO</th>
-				<th>DNAME</th>
-				<th>LOC</th>
-			</tr>
-			<c:forEach items="${list }" var="bean">
-			<tr>
-				<td>${bean.deptno }</td>
-				<td>${bean.dname }</td>
-				<td>${bean.loc }</td>
-			</tr>
-			</c:forEach>
-		</table>
+		<form action="dinsert.action" method="post">
+		  <div class="form-group">
+		    <label for="dname">DNAME</label>
+		    <input type="text" class="form-control" name="dname" id="dname" placeholder="이름을 입력"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="loc">LOC</label>
+		    <input type="text" class="form-control" name="loc" id="loc" placeholder="지역명을 입력"/>
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
 	</div>
 	<div class="row" id="footer">
 	  <div class="col-md-12"><address>비트캠프 서울시 서초구 강남대로 459 (서초동, 백암빌딩)</address>

@@ -43,6 +43,18 @@ public class DeptDao {
 		return list;
 	}
 
+	public void insertOne(DeptVo bean) throws SQLException {
+		final String SQL="INSERT INTO DEPT (DNAME,LOC) VALUES (?,?)";
+		try {
+			PreparedStatement pstmt=conn.prepareStatement(SQL);
+			pstmt.setString(1, bean.getDname());
+			pstmt.setString(2, bean.getLoc());
+			pstmt.executeUpdate();
+		}finally {
+			if(conn!=null)conn.close();
+		}
+	}
+
 }
 
 
