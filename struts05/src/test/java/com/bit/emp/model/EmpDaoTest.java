@@ -13,18 +13,21 @@ assertSame(ox, oy) - 객체 ox와 oy가 같은 객체임을 확인합니다. ox�
 assertEquals(x, y) - 객체 x와 y가 일치함을 확인합니다. x(예상 값)와 y(실제 값)가 같으면 테스트 통과
 assertNotSame(ox, oy) - ox와 oy가 같은 객체를 참조하고 있지 않으면 통과
 assertNotEquals(x, y)
-
 assertArrayEquals(a, b); -  배열 A와 B가 일치함을 확인합니다.
-
 assertFalse(x) -  x가 false 인지 확인합니다.
-
 assertTrue(x) - x가 true 인지 확인합니다.
-
 assertNull(o) - 객체o가 null인지 확인합니다.
-
 assertNotNull(o) - 객체o가 null이 아닌지 확인합니다.
-
 assertfail() - 테스트를 바로 실패처리
+//////////////////////////////////////////////////////////
+ @FixMethodOrder
+
+@FixMethodOrder(MethodSorters.DEFAULT)
+테스트로 출력을 할 수 있지만 순서가 보장되지 않습니다.
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+메소드명 기준으로하여 오름차순으로 실행됩니다.
+@FixMethodOrder(MethodSorters.JVM)
+테스트방법을 JVM이 리턴한 순서대로 실행됩니다. 
 */	
 	@Test
 	public void testGetConnection() throws Exception {

@@ -12,11 +12,28 @@
             <result>/index.jsp</result>
         </action>
     </package>
+    
     <package name="emp" extends="basic">
-    	<action name="emp">
+    	<action name="emp" class="com.bit.emp.action.ListAction">
+    		<interceptor-ref name="params"/>
     		<result>/emp/list.jsp</result>
     	</action>
+    	<action name="edetail" class="com.bit.emp.action.OneAction">
+    		<interceptor-ref name="modelDriven"/>
+    		<interceptor-ref name="params"/>
+    		<result>/emp/form.jsp</result>
+    	</action>
+    	<action name="eedit" class="com.bit.emp.action.OneAction">
+    		<interceptor-ref name="modelDriven"/>
+    		<interceptor-ref name="params"/>
+    		<result>/emp/form.jsp</result>
+    	</action>
+    	<action name="eadd">
+    		<result>/emp/form.jsp</result>
+    	</action>
     </package>
+    
+    
     <package name="dept" extends="basic">
     	<action name="dept" class="com.bit.dept.action.ListAction">
     		<interceptor-ref name="params"/>
