@@ -1,5 +1,6 @@
 package com.bit.emp.action;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class EmpAction implements ModelDriven<EmpVo> {
 	EmpVo bean=new EmpVo();
-	static List<EmpVo> list=new ArrayList<>();
+	List<EmpVo> list;
 	
 	public EmpAction() {
 		System.out.println("Action객체 생성...");
@@ -28,13 +29,12 @@ public class EmpAction implements ModelDriven<EmpVo> {
 	}
 	
 	public String addList() {
-		list.add(bean);
-		System.out.println(list);
+
 		return "success";
 	}
 
-	public String empList() {
-		System.out.println(list);
+	public String empList() throws SQLException {
+		list=new com.bit.emp.model.EmpDao().selectAll();
 		return "success";
 	}
 
