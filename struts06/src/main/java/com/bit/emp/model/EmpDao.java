@@ -26,5 +26,21 @@ public class EmpDao {
 	public List<EmpVo> selectAll() throws SQLException {
 		return smc.queryForList("selectAll");
 	}
+	
+	public void insertOne(EmpVo bean) throws SQLException {
+		System.out.println("before insert...");
+		smc.insert("insertOne",bean);
+		System.out.println("after insert...");
+	}
 
 }
+
+
+
+
+
+
+
+
+
+

@@ -4,6 +4,9 @@
      
      <sqlMap>
      	<select id="selectAll" resultClass="com.bit.emp.model.entity.EmpVo">
-     		select * from emp
+     		SELECT * FROM EMP
      	</select>
+     	<insert id="insertOne" parameterClass="com.bit.emp.model.entity.EmpVo">
+     		INSERT INTO EMP (NAME,SUB,NALJA,PAY) VALUES (#name#, #sub#, NOW(), #pay#)
+     	</insert>
      </sqlMap>

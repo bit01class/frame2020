@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bit.emp.model.EmpDao;
 import com.bit.emp.model.entity.EmpVo;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -28,8 +29,8 @@ public class EmpAction implements ModelDriven<EmpVo> {
 		return list;
 	}
 	
-	public String addList() {
-
+	public String addList() throws SQLException {
+		new EmpDao().insertOne(bean);
 		return "success";
 	}
 
