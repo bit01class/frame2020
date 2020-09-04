@@ -9,4 +9,13 @@
      	<insert id="insertOne" parameterClass="com.bit.emp.model.entity.EmpVo">
      		INSERT INTO EMP (NAME,SUB,NALJA,PAY) VALUES (#name#, #sub#, NOW(), #pay#)
      	</insert>
+     	<select id="selectOne" parameterClass="int" resultClass="com.bit.emp.model.entity.EmpVo">
+     		SELECT * FROM EMP WHERE SABUN=#value#
+     	</select>
+     	<update id="updateOne" parameterClass="com.bit.emp.model.entity.EmpVo">
+     		UPDATE EMP SET NAME=#name#,SUB=#sub#,NALJA=NOW(),PAY=#pay# WHERE SABUN=#sabun#
+     	</update>
+     	<delete id="deleteOne" parameterClass="int">
+     		DELETE FROM EMP WHERE SABUN=#value#
+     	</delete>
      </sqlMap>

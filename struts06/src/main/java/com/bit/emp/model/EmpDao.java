@@ -28,9 +28,19 @@ public class EmpDao {
 	}
 	
 	public void insertOne(EmpVo bean) throws SQLException {
-		System.out.println("before insert...");
 		smc.insert("insertOne",bean);
-		System.out.println("after insert...");
+	}
+
+	public EmpVo selectOne(int sabun) throws SQLException {
+		return (EmpVo) smc.queryForObject("selectOne",sabun);
+	}
+
+	public int updateOne(EmpVo bean) throws SQLException {
+		return smc.update("updateOne",bean);
+	}
+	
+	public int deleteOne(int sabun) throws SQLException{
+		return smc.delete("deleteOne",sabun);
 	}
 
 }

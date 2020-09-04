@@ -43,4 +43,36 @@ public class EmpAction implements ModelDriven<EmpVo> {
 	public EmpVo getModel() {
 		return bean;
 	}
+	
+	public String empOne() throws SQLException {
+		bean=new EmpDao().selectOne(bean.getSabun());
+		return "success";
+	}
+	
+	public String editOne() throws SQLException{
+		int result=new EmpDao().updateOne(bean);
+		return "success";
+	}
+	
+	public String delete() throws SQLException{
+		new EmpDao().deleteOne(bean.getSabun());
+		return "success";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
